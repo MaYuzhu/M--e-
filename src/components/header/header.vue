@@ -3,25 +3,30 @@
     <div class="logo">
       <img src="./logo.png" alt="">
     </div>
-    <div id="nav" class="nav" @click="navIs">
-      <i class="iconfont icon-gengduo"></i>
-      <i class="iconfont icon-ego-guanbi"></i>
+    <div class="nav" @click="navIs">
+      <transition name="nav_icon">
+        <i class="iconfont icon-gengduo" :class="{on:isShow}" ></i>
+      </transition>
+      <transition name="close_icon">
+        <i class="iconfont icon-ego-guanbi" :class="{on:!isShow}" ></i>
+      </transition>
+
     </div>
   </div>
 </template>
 
 <script>
-  //var geng = document.querySelector('.nav')
-  let geng = document.getElementById('nav')
-  //var guan = document.querySelector('.nav> :last-child')
-  export default {
 
+
+  export default {
+    data(){
+    	return{
+    		isShow:true
+      }
+    },
     methods:{
       navIs(){
-        console.log(geng)
-        //console.log(guan)
-        //geng.style.display = 'none'
-        //guan.style.display = 'block'
+      	this.isShow = !this.isShow
       }
     }
   }
@@ -45,15 +50,33 @@
     .nav
       width 68px
       height 68px
-      display flex
-      justify-content center
-      align-items center
+      position relative
       i
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%,-50%) rotate(180deg)
         font-size 34px
         color #666
-      >:nth-child(1)
-        display block
-      >:nth-child(2)
-        display none
+        opacity 0
+        transition all 1s ease
+        &.on
+          opacity 1
+          transform translate(-50%,-50%) rotate(0deg)
+
+        /*&.nav_icon-enter-active,&.nav_icon-leave-active
+          transition all 1s ease
+
+        &.nav_icon-enter,&.nav_icon-leave-to
+          opacity 0.5
+
+
+        &.close_icon-enter-active,&.close_icon-leave-active
+          transition all 1s ease
+          opacity 0
+        &.close_icon-enter,&.close_icon-leave-to
+          opacity 0.5*/
+
+
 
 </style>
