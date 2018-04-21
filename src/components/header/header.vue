@@ -29,6 +29,7 @@
 <script>
 
 
+
   export default {
     data(){
     	return{
@@ -91,6 +92,7 @@
       right 0
       background #f0f0f0
       border 1px solid #999
+      z-index 20
       li
         font-size 16px
         line-height 3

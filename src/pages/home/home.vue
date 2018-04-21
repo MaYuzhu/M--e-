@@ -1,7 +1,7 @@
 <template>
-  <div style="height: 2000px;position: relative" class="abc">
+  <div class="home_wrap" ref="home_wrap" :class="{on1:fixed}">
     <Header :class="{on:fixed}"></Header>
-    <Nav style="margin: 70px 0"></Nav>
+    <Nav></Nav>
     <ul class="a1">
       <li>1</li>
       <li>2</li>
@@ -19,29 +19,12 @@
 <script>
   import Header from '../../components/header/header.vue'
   import Nav from '../../components/nav_scroll/nav_scroll.vue'
-  $('.app_wrap').scroll(function () {
-    console.log(1111111111111)
-  })
-  $('.abc').click(()=>{console.log(222)})
-  console.log($('.abc').height())
-  $(document).scroll(function () {
-    console.log($(window).scrollTop())
-    if($(window).scrollTop()>70){
-      console.log('aaa')
-      this.fixed = true
-    }else{
-      console.log('000')
-      this.fixed = false
-    }
-
-  });
 
   export default {
-    data(){
-      return{
-        fixed:false
-      }
+    props:{
+      fixed:Boolean
     },
+
     components:{
       Header,
       Nav,
@@ -50,6 +33,15 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
- .on
-  position fixed
+  .home_wrap
+
+    height 1000px
+    background lavender
+  .on1
+    margin-top 68px
+    .on
+      display none
+
+
+
 </style>
