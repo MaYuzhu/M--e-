@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavHeader></NavHeader>
-    关于我们
+    新闻
   </div>
 </template>
 

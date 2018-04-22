@@ -2,12 +2,24 @@
   <div>
     <div class="nav_scroll_wrap swiper-container">
       <ul class="nav_scroll swiper-wrapper">
-        <li class="swiper-slide">首&nbsp;&nbsp;&nbsp;页</li>
-        <li class="swiper-slide">关于我们</li>
-        <li class="swiper-slide">主导产业</li>
-        <li class="swiper-slide">新闻中心</li>
-        <li class="swiper-slide">加入我们</li>
-        <li class="swiper-slide">联系我们</li>
+        <li class="swiper-slide" @click="goto('/home')">
+          <span :class="{current:isCurrent('/home')}">首&nbsp;&nbsp;&nbsp;页</span>
+        </li>
+        <li class="swiper-slide" @click="goto('/about')">
+          <span :class="{current:isCurrent('/about')}">关于我们</span>
+        </li>
+        <li class="swiper-slide" @click="goto('/contact')">
+          <span :class="{current:isCurrent('/contact')}">主导产业</span>
+        </li>
+        <li class="swiper-slide" @click="goto('/news')">
+          <span :class="{current:isCurrent('/news')}">新闻中心</span>
+        </li>
+        <li class="swiper-slide" @click="goto('/join')">
+          <span :class="{current:isCurrent('/join')}">加入我们</span>
+        </li>
+        <li class="swiper-slide" @click="goto('/main')">
+          <span :class="{current:isCurrent('/main')}">联系我们</span>
+        </li>
 
       </ul>
       <!-- Add Pagination -->
@@ -24,10 +36,18 @@
   export default {
   	mounted(){
         new Swiper('.swiper-container',{
-          slidesPerView: 4.4,
+          slidesPerView: 4.5,
         })
 
     },
+    methods:{
+  		goto(path){
+  			this.$router.push(path)
+      },
+      isCurrent(path){
+  			return this.$route.path.indexOf(path) === 0
+      }
+    }
 
   }
 </script>
@@ -35,9 +55,16 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .nav_scroll_wrap
     .nav_scroll
+      height 68px
       .swiper-slide
+        width 100px
         text-align center
         box-sizing border-box
         font-size 16px
-        line-height 2
+        line-height 2.4
+        >span
+          padding 6px 0
+          &.current
+            border-bottom solid 2px #f9662d
+            color #f9662d
 </style>

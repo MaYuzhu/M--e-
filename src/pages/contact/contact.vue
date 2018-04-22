@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavHeader></NavHeader>
-    关于我们
+    主导产业
   </div>
 </template>
 
