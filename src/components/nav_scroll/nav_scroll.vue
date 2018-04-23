@@ -8,8 +8,8 @@
         <li class="swiper-slide" @click="goto('/about')">
           <span :class="{current:isCurrent('/about')}">关于我们</span>
         </li>
-        <li class="swiper-slide" @click="goto('/contact')">
-          <span :class="{current:isCurrent('/contact')}">主导产业</span>
+        <li class="swiper-slide" @click="goto('/main')">
+          <span :class="{current:isCurrent('/main')}">主导产业</span>
         </li>
         <li class="swiper-slide" @click="goto('/news')">
           <span :class="{current:isCurrent('/news')}">新闻中心</span>
@@ -17,8 +17,8 @@
         <li class="swiper-slide" @click="goto('/join')">
           <span :class="{current:isCurrent('/join')}">加入我们</span>
         </li>
-        <li class="swiper-slide" @click="goto('/main')">
-          <span :class="{current:isCurrent('/main')}">联系我们</span>
+        <li class="swiper-slide" @click="goto('/contact')">
+          <span :class="{current:isCurrent('/contact')}">联系我们</span>
         </li>
 
       </ul>
@@ -55,13 +55,12 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .nav_scroll_wrap
     .nav_scroll
-      height 68px
+      height 40px
       .swiper-slide
-        width 100px
         text-align center
         box-sizing border-box
         font-size 16px
-        line-height 2.4
+        line-height 40px
         >span
           padding 6px 0
           &.current

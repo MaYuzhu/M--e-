@@ -85,7 +85,7 @@
     z-index: 99
     box-shadow :0 2px 6px 0 rgba(0,0,0,0.5)
     transform-origin top
-    opacity .8
+    opacity .9
     &.app_header-enter-active,&.app_header-leave-active
       transition: .8s
     &.app_header-enter,&.app_header-leave-to

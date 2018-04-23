@@ -11,10 +11,10 @@
       <ul class="nav_list" v-show="nav_item">
         <li @click="goto('/home')" :class="{current:isCurrent('/home')}">首&nbsp;&nbsp;&nbsp;&nbsp;页</li>
         <li @click="goto('/about')" :class="{current:isCurrent('/about')}">关于我们</li>
-        <li @click="goto('/contact')" :class="{current:isCurrent('/contact')}">主导产业</li>
+        <li @click="goto('/main')" :class="{current:isCurrent('/main')}">主导产业</li>
         <li @click="goto('/news')" :class="{current:isCurrent('/news')}">新闻中心</li>
         <li @click="goto('/join')" :class="{current:isCurrent('/join')}">加入我们</li>
-        <li @click="goto('/main')" :class="{current:isCurrent('/main')}">联系我们</li>
+        <li @click="goto('/contact')" :class="{current:isCurrent('/contact')}">联系我们</li>
       </ul>
     </transition>
 
