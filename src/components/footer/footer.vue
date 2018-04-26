@@ -28,7 +28,9 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .footer1
+    position relative
     width 100%
+    height 175px
     background #363739
     >p
       padding 10px 0 10px 10px
@@ -36,13 +38,39 @@
       color #e9e9e9
     >:nth-child(2)
       width 65%
-    >:nth-child(3)
+      position absolute
+      left 0
+      ul
+        display flex
+        justify-content space-around
+        li
+          margin 12px 0
+          i
+            font-size 34px
+            color #888
+      .address
+        font-size 14px
+        color #888
+        line-height 2
+        margin 10px 0 18px 24px
+    >.img_weixin
       width 35%
+      position absolute
+      right  0
+      p
+        text-align center
+        font-size 14px
+        color #888
+        line-height 1.5
+      img
+        width 80%
+        display block
+        margin 0 auto
   .footer2
     width 100%
     background #29292a
     p
-      color #ddd
+      color #888
       font-size 12px
       text-align center
       line-height 3

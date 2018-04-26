@@ -1,51 +1,62 @@
 <template>
 	<div class="Industry_wrap">
 
-      <div class="inner">
-        <img src="./img/dichan.jpg" alt="">
-        <div class="top">
-          <h2>中企地产</h2>
-          <div class="line"></div>
-          <p>深圳正合意资产管理有限注册资本500万元人民币，总部位于深圳市前海深港合作区。</p>
-        </div>
+    <div class="swiper-container-industry">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./img/bigimg.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./img/dichan1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./img/dichan2.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./img/dichan3.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./img/dichan4.jpg" alt=""></div>
 
       </div>
-      <div class="show_img">
-        <div><img src="./img/chan1.jpg" alt=""></div>
-        <div><img src="./img/chan2.jpg" alt=""></div>
-        <div><img src="./img/chan3.jpg" alt=""></div>
-        <div><img src="./img/chan4.jpg" alt=""></div>
-      </div>
-
+    </div>
 	</div>
 </template>
 
 <script>
-	export default {}
+  import 'swiper/dist/css/swiper.min.css'
+  import Swiper from 'swiper'
+	export default {
+
+    mounted(){
+      var swiperIndustry = new Swiper('.swiper-container-industry', {
+        spaceBetween: 30,
+        loop:true,
+        /*autoplay: {
+          disableOnInteraction: false,
+          delay:2000
+        },*/
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+      })
+    }
+
+
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
   .Industry_wrap
     width 100%
     background #faf7f7
-    padding 30px 0
-    .inner
-      width 80%
-      margin 0 auto
-      img
-        width 100%
-    .show_img
-      width 80%
-      margin 0 auto
-      display flex
-      justify-content flex-start
-      flex-wrap wrap
-      >div
-        width 50%
-        overflow hidden
-        padding 1px
-        box-sizing border-box
-      img
-        width 100%
+    padding 80px 0
+    .swiper-container-industry
+      margin 0 100px 0 40px
+      .swiper-wrapper
+
+        .swiper-slide
+          height 300px
+          overflow hidden
+          transition all 1s
+          border-radius 12px
+          img
+            width 100%
+            height 100%
+        .swiper-slide-active
+          transform scale(1.14)
+
 
 </style>

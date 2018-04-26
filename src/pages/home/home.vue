@@ -107,8 +107,14 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .home_img
     width 100%
+    height 236px
+    overflow hidden
+    display flex
+    justify-content center
     img
-      width 100%
+      width 200%
+      display block
+
   .home_news_wrap
     width 100%
     margin-top 20px

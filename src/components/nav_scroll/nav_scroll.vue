@@ -22,8 +22,8 @@
         </li>
 
       </ul>
-      <!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
+
+
     </div>
 
   </div>
@@ -35,7 +35,7 @@
 
   export default {
   	mounted(){
-        new Swiper('.swiper-container',{
+        var swiperScroll = new Swiper('.swiper-container',{
           slidesPerView: 4.5,
         })
 
