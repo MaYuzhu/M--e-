@@ -107,7 +107,7 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .home_img
     width 100%
-    height 236px
+    height 8rem
     overflow hidden
     display flex
     justify-content center
@@ -127,7 +127,7 @@
       justify-content space-around
       >li
         width 33.3333%
-        height 68px
+        height 3rem
         border-radius 10px
         padding 10px 0
         color #cabdbd
@@ -136,16 +136,16 @@
         align-items center
         >p
           transform translate(0,-5px)
+          font-size 16px
         &.on_news_date
           background #f9662d
           color #fff
           position relative
           >p
-            font-size 20px
-
+            font-size 1rem
           &::after
             position absolute
-            top 88px
+            top 3.8rem
             left 50%
             content ""
             display block
@@ -171,6 +171,7 @@
         position absolute
         top 0
         right 0
+        font-size 16px
       >h2
         width 70%
         text-overflow ellipsis
