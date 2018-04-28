@@ -1,13 +1,13 @@
 <template>
 	<div class="Industry_wrap">
-    <div class="backg">
+    <div class="backg" :style="{backgroundImage: 'url(' + pic_big[x] + ')'}">
       <div></div>
     </div>
     <div class="swiper-container-industry">
       <div class="swiper-wrapper">
 
         <div class="swiper-slide">
-          <img src="./img/dichan1.jpg" alt="">
+          <img src="./img/dichan111_02.jpg" alt="">
           <div class="bottom_text" @click="upText(0)">
             <i class="iconfont icon-shang" @click.stop="upText(0)"></i>
             <h2>中企地产</h2>
@@ -46,30 +46,27 @@
 </template>
 
 <script>
+
   import 'swiper/dist/css/swiper.min.css'
   import Swiper from 'swiper'
 
-
-
 	export default {
+
     data(){
       return{
-        active:{
-          src:'./img/dichan1.jpg'
-        }
+        pic_big:[
+          '/static/img/dichan1.cf308cb.jpg',
+          '/static/img/piaoe.d32820a.jpg',
+          '/static/img/zhi.0dd9a77.jpg',
+          '/static/img/zi.ff183cc.jpg',
+        ],
+        x: 0,
       }
     },
-    watch:{
-      active:{
-        handler(newValue, oldValue) {
-          console.log(newValue)
-          console.log(111)
-          backg.style.background = 'url('+ active.src +') no-repeat'
-        },
-        deep: true
-      }
-    },
+
     mounted(){
+
+      var ctrl = this
       var swiperIndustry = new Swiper('.swiper-container-industry', {
         spaceBetween: 34,
         /*loop:true,*/
@@ -82,11 +79,23 @@
           el: '.swiper-pagination-industry',
           clickable: true
         },
+        on: {
+          slideChangeTransitionEnd:  function(){
+            ctrl.x = this.activeIndex
+          }
+        }
       })
-      var backg = document.querySelector('.backg')
-      var active = document.querySelector('.swiper-slide-active img')
-      console.log(backg)
+
+      var width = (document.querySelectorAll('.swiper-container-industry .swiper-slide')[0]).offsetWidth
+      var inner = document.querySelectorAll('.swiper-container-industry .swiper-slide')
+      for(var i=0;i<inner.length;i++){
+        inner[i].style.height = width*1.3 + 'px'
+      }
+      var wrap = document.querySelector('.Industry_wrap')
+      wrap.style.height = width*1.32 + 'px'
+
     },
+
     methods:{
       upText(x){
         let bottomText = document.querySelectorAll('.bottom_text')
@@ -106,14 +115,13 @@
 
 
 
-
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
   .Industry_wrap
     width 100%
-    height 11.6rem
+
     background #faf7f7
     padding 80px 0
     position relative
@@ -123,7 +131,6 @@
       .swiper-wrapper
         .swiper-slide
           overflow hidden
-          height 12rem
           transition all 1s
           border-radius 12px
           box-shadow 3px 3px 8px 1px
@@ -163,7 +170,8 @@
       left 0
       /*background url('./img/dichan1.jpg') no-repeat*/
       background-size:100% 100%;
-      filter blur(10px)
+      background-repeat no-repeat
+      filter blur(5px)
       div
         width 100%
         height 100%

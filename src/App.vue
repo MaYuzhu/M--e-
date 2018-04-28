@@ -86,10 +86,12 @@
     box-shadow :0 2px 6px 0 rgba(0,0,0,0.5)
     transform-origin top
     opacity .9
+    height 68px
     &.app_header-enter-active,&.app_header-leave-active
       transition: .8s
     &.app_header-enter,&.app_header-leave-to
       opacity 0
+      height 0
 
 
 </style>
