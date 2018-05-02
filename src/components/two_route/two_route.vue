@@ -17,9 +17,11 @@
   .two_route
     width 100%
     height 2rem
-    background pink
+    background #f3f3f3
     display flex
     justify-content space-around
-    font-size 18px
+    font-size 16px
     line-height 2rem
+    li
+      padding 0 10px
 </style>

@@ -28,13 +28,15 @@
     data(){
     	return{
     		isShow:true,
-        nav_item:false
+        nav_item:false,
+        data:true
       }
     },
     mounted(){
       document.addEventListener('touchend',()=>{
         this.nav_item = false
         this.isShow = true
+        this.data = false
       })
     },
     methods:{
@@ -45,6 +47,7 @@
 
       goto(path){
         this.$router.push(path)
+        this.$emit('listenH',false)
       },
       isCurrent(path){
         return this.$route.path.indexOf(path) === 0

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <transition name="app_header">
-      <Header v-show="data" class="app_header"></Header>
+      <Header v-show="data" v-on:listenH="showC" class="app_header"></Header>
     </transition>
 
     <div class="app_wrap" ref="appWrap">
@@ -34,26 +34,35 @@
 
   },
   mounted(){
+    this.$nextTick(() => {
+      this._initScroll()
+    })
 
+  },
+  watch: {
+    shopInfo (value) {
+      this._initScroll()
+    }
+  },
+  methods:{
+  	showC(x){
+      this.data = x
+    },
+    _initScroll(){
       const pageScroll = new BScroll(this.$refs.appWrap,{
         click:true,
         probeType:3
       })
       pageScroll.on('scroll',(pos)=>{
-      	let scrollY = -Math.round(pos.y)
-        if(scrollY<=60){
+        let scrollY = -Math.round(pos.y)
+        if(scrollY<=68){
           this.data = false
         }
-        if(scrollY>60){
+        if(scrollY>68){
           this.data = true
         }
       })
-
-  },
-  methods:{
-  	_initScrollY(){}
-
-
+    }
 
   }
 }
@@ -75,7 +84,7 @@
     height: 100%;
 
     overflow-scrolling:touch;
-  -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
 
   ::-webkit-scrollbar {
     width: 0px;
@@ -87,8 +96,10 @@
     transform-origin top
     opacity .9
     height 68px
-    &.app_header-enter-active,&.app_header-leave-active
+    &.app_header-enter-active
       transition: .8s
+    &.app_header-leave-active
+      transition 0
     &.app_header-enter,&.app_header-leave-to
       opacity 0
       height 0

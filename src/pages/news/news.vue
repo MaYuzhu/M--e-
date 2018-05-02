@@ -4,7 +4,7 @@
     <TowRoute>
       <span slot="first"></span>
       <span slot="second">公司动态</span>
-      <span slot="third">行业咨讯</span>
+      <span slot="third">行业咨讯</span>npm
       <span slot="fourth"></span>
     </TowRoute>
   </div>

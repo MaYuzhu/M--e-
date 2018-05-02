@@ -8,6 +8,9 @@ import news from '../pages/news/news.vue'
 import join from '../pages/join/join.vue'
 import main from '../pages/main/main.vue'
 
+import about1 from '../pages/about/about1/about1.vue'
+import about2 from '../pages/about/about2/about2.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -26,7 +29,21 @@ export default new Router({
     },
     {
       path: '/about',
-      component:about
+      component:about,
+      children:[
+        {
+          path:'',
+          redirect:'/about/about1'
+        },
+        {
+          path:'about1',
+          component: about1
+        },
+        {
+          path:'about2',
+          component: about2
+        },
+      ],
     },
     {
       path: '/contact',

@@ -55,7 +55,7 @@
     data(){
       return{
         pic_big:[
-          '/static/img/dichan1.cf308cb.jpg',
+          '/static/img/dichan111_02.84b05fe.jpg',
           '/static/img/piaoe.d32820a.jpg',
           '/static/img/zhi.0dd9a77.jpg',
           '/static/img/zi.ff183cc.jpg',
@@ -164,7 +164,7 @@
 
     .backg
       width 100%
-      height 18rem
+      height 22rem
       position absolute
       top 0
       left 0

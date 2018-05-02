@@ -20,10 +20,7 @@
         <li class="swiper-slide" @click="goto('/contact')">
           <span :class="{current:isCurrent('/contact')}">联系我们</span>
         </li>
-
       </ul>
-
-
     </div>
 
   </div>
@@ -45,7 +42,7 @@
   			this.$router.push(path)
       },
       isCurrent(path){
-  			return this.$route.path.indexOf(path) === 0
+  			return this.$route.path.indexOf(path) !== -1
       }
     }
 
