@@ -39,17 +39,25 @@
   watch:{
     $route: {
       handler: function(val, oldVal) {
-        console.log(this._initScroll)
-        setTimeout( () => {
-          alert('a')
-          console.log(this._initScroll)
-          this._initScroll()
-        },500)
+      	this.$nextTick(()=>{
+          this.pageScroll = new BScroll(this.$refs.appWrap,{
+            click:true,
+            probeType:3
+          })
+          this.pageScroll.on('scroll',(pos)=>{
+            let scrollY = -Math.round(pos.y)
+            if(scrollY<=68){
+              this.data = false
+            }
+            if(scrollY>68){
+              this.data = true
+            }
+          })
+        })
 
       },
       // 深度观察
       deep: true,
-
     }
 
   },
@@ -59,6 +67,7 @@
     },
     _initScroll(){
   	  this.$nextTick(()=>{
+
   	    if(!this.pageScroll){
           this.pageScroll = new BScroll(this.$refs.appWrap,{
             click:true,
@@ -78,19 +87,28 @@
         }
       })
 
-      /*this.pageScroll = new BScroll(this.$refs.appWrap,{
-        click:true,
-        probeType:3
+    },
+    _initScroll1(){
+      this.$nextTick(()=>{
+
+        if(!this.pageScroll1){
+          this.pageScroll1 = new BScroll(this.$refs.appWrap,{
+            click:true,
+            probeType:3
+          })
+          this.pageScroll1.on('scroll',(pos)=>{
+            let scrollY = -Math.round(pos.y)
+            if(scrollY<=68){
+              this.data = false
+            }
+            if(scrollY>68){
+              this.data = true
+            }
+          })
+        }else {
+          this.pageScroll1.refresh()
+        }
       })
-      this.pageScroll.on('scroll',(pos)=>{
-        let scrollY = -Math.round(pos.y)
-        if(scrollY<=68){
-          this.data = false
-        }
-        if(scrollY>68){
-          this.data = true
-        }
-      })*/
     }
   }
 }

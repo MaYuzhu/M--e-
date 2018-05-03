@@ -55,7 +55,7 @@
       position relative
       &::after
         position absolute
-        bottom 0
+        bottom -1px
         left 50%
         content ""
         display block
