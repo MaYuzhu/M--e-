@@ -5,10 +5,9 @@
     </transition>
 
     <div class="app_wrap" ref="appWrap">
-    <keep-alive>
-      <router-view :data="data"></router-view>
-    </keep-alive>
-
+      <keep-alive>
+        <router-view :data="data"></router-view>
+      </keep-alive>
     </div>
 
   </div>
@@ -17,7 +16,6 @@
 <script>
   import Header from './components/header/header.vue'
   import Nav from './components/nav_scroll/nav_scroll.vue'
-
 
   import BScroll from 'better-scroll'
 
@@ -31,29 +29,60 @@
   components:{
     Header,
     Nav,
-
   },
-  mounted(){
+
+  mounted() {
     this.$nextTick(() => {
       this._initScroll()
     })
-
   },
-  watch: {
-    shopInfo (value) {
-      this._initScroll()
+  watch:{
+    $route: {
+      handler: function(val, oldVal) {
+        console.log(this._initScroll)
+        setTimeout( () => {
+          alert('a')
+          console.log(this._initScroll)
+          this._initScroll()
+        },500)
+
+      },
+      // 深度观察
+      deep: true,
+
     }
+
   },
   methods:{
   	showC(x){
       this.data = x
     },
     _initScroll(){
-      const pageScroll = new BScroll(this.$refs.appWrap,{
+  	  this.$nextTick(()=>{
+  	    if(!this.pageScroll){
+          this.pageScroll = new BScroll(this.$refs.appWrap,{
+            click:true,
+            probeType:3
+          })
+          this.pageScroll.on('scroll',(pos)=>{
+            let scrollY = -Math.round(pos.y)
+            if(scrollY<=68){
+              this.data = false
+            }
+            if(scrollY>68){
+              this.data = true
+            }
+          })
+        }else {
+          this.pageScroll.refresh()
+        }
+      })
+
+      /*this.pageScroll = new BScroll(this.$refs.appWrap,{
         click:true,
         probeType:3
       })
-      pageScroll.on('scroll',(pos)=>{
+      this.pageScroll.on('scroll',(pos)=>{
         let scrollY = -Math.round(pos.y)
         if(scrollY<=68){
           this.data = false
@@ -61,9 +90,8 @@
         if(scrollY>68){
           this.data = true
         }
-      })
+      })*/
     }
-
   }
 }
 </script>

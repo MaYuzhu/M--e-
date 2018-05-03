@@ -29,6 +29,7 @@
 <script>
   import 'swiper/dist/css/swiper.min.css'
   import Swiper from 'swiper'
+  import BScroll from 'better-scroll'
 
   export default {
   	mounted(){
