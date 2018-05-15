@@ -158,26 +158,24 @@
         >img
           display block
           margin 0 auto
+          width 118px
         .content2_text
           position absolute
+          width 100%
           top 50%
           left 50%
           text-align center
           transform translate(-50%,-50%)
-          font-size 20px
+          font-size 14px
           color #606060
           background rgba(243,243,243,.7)
           line-height 28px
           letter-spacing 1px
 
       >ul
-        width 100%
-        display flex
-        justify-content space-between
         >li
           p
-            width 320px
-            margin 0 auto
+            width 100%
           >:nth-child(2)
             font-size 16px
             color #3b3b3b
@@ -186,11 +184,12 @@
           >:nth-child(3)
             font-size 16px
             color #787878
-            margin 30px 0 50px
+            margin 30px auto 50px
+            padding 10px
             text-align justify
             line-height 2
             letter-spacing 1px
-
+            box-sizing border-box
 
   .content3
     width 100%
