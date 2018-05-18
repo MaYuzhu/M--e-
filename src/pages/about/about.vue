@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavHeader></NavHeader>
+    <NavHeader ></NavHeader>
     <div class="about_big_img">
       <img src="./about_03.jpg" alt="">
     </div>
@@ -20,6 +20,7 @@
   import TwoRoute from '../../components/two_route/two_route.vue'
 
   export default {
+
     components:{
       NavHeader,
       TwoRoute,

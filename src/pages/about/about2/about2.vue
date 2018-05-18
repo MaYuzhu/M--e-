@@ -60,10 +60,10 @@
             <p class="p2">联合行业专业人才，组建专家团队，研究行业问题和前沿理论，通过庞大行业人力资本数据库，积累大量行业问题和解决方案，形成独有的知识库；</p>
           </li>
           <li class="li2">
-            <div class="p_wrap">
+
               <p class="p3">大量人才储备和人才合作，确保企业服务的旺盛生命力</p>
               <p class="p4">中企智融与国内多所高校进行合作，为后续专业人才的培养和发展不断的提供新鲜血液；中企智融坚持合作共赢的模式，和大量企业进行合作，维护行业高端人才库，确保金融行业粘性和落地性，提供有力的行业支持。</p>
-            </div>
+
 
             <img class="img2" src="./c3-2.jpg" alt="">
           </li>
@@ -176,6 +176,8 @@
         >li
           p
             width 100%
+          >img
+            width 100%
           >:nth-child(2)
             font-size 16px
             color #3b3b3b
@@ -203,67 +205,49 @@
         padding 50px 0
         >img
           display block
+          width 128px
           margin 0 auto
         .content3_text
           position absolute
           top 50%
           left 50%
+          width 60%
           text-align center
           transform translate(-50%,-50%)
-          font-size 20px
+          font-size 14px
           color #606060
-          background rgba(255,255,255,.7)
+          background rgba(255,255,255,.6)
           line-height 28px
           letter-spacing 1px
 
       >ul
         width 100%
-        >.li1
-          overflow hidden
+        >.li1,.li2
           margin-bottom 30px
-          >.img1
-            float left
-          >.img2
-            float right
+          >img
+            width 100%
           >.p1
             font-size 16px
+            margin 20px auto
             color #3b3b3b
-            margin 60px 0 0 50px
-            float left
+            text-align center
             line-height 2
             letter-spacing 1px
-          >.p2
-            font-size 16px
+          >.p2,.p4
+            font-size 14px
             color #787878
-            margin 30px 0 50px 50px
+            margin 0 auto
+            padding 0 18px
             text-align justify
-            line-height 2.5
+            line-height 2
             letter-spacing 1px
             float left
-            width 650px
-
-
-        >.li2
-          width 100%
-          overflow hidden
-          .p_wrap
-            float left
-            width 650px
-          >.img2
-            float right
           .p3
+            width 60%
             font-size 16px
+            margin 140px auto 20px
             color #3b3b3b
-            margin-top 40px
-            line-height 2
+            text-align center
+            line-height 1.2
             letter-spacing 1px
-          .p4
-            font-size 16px
-            color #787878
-            margin 30px 0 50px
-            text-align justify
-            line-height 2.5
-            letter-spacing 1px
-
-
 </style>

@@ -1,13 +1,16 @@
 <template>
   <div id="app">
+    <!--v-on:listenH="showC"-->
     <transition name="app_header">
-      <Header v-show="data" v-on:listenH="showC" class="app_header"></Header>
+      <Header v-show="data && $route.meta.showHeader"
+              class="app_header"
+              ></Header>
     </transition>
 
     <div class="app_wrap" ref="appWrap">
-      <keep-alive>
-        <router-view :data="data"></router-view>
-      </keep-alive>
+
+        <router-view></router-view>
+
     </div>
 
   </div>
@@ -32,9 +35,7 @@
   },
 
   mounted() {
-    this.$nextTick(() => {
-      this._initScroll()
-    })
+     this._initScroll()
   },
   watch:{
     $route: {
@@ -48,9 +49,11 @@
             let scrollY = -Math.round(pos.y)
             if(scrollY<=68){
               this.data = false
+
             }
             if(scrollY>68){
               this.data = true
+
             }
           })
         })
@@ -59,16 +62,14 @@
       // 深度观察
       deep: true,
     }
-
   },
   methods:{
-  	showC(x){
+  	/*showC(x){
       this.data = x
-    },
+    },*/
     _initScroll(){
-  	  this.$nextTick(()=>{
 
-  	    if(!this.pageScroll){
+       if(!this.pageScroll){
           this.pageScroll = new BScroll(this.$refs.appWrap,{
             click:true,
             probeType:3
@@ -77,39 +78,18 @@
             let scrollY = -Math.round(pos.y)
             if(scrollY<=68){
               this.data = false
+
             }
             if(scrollY>68){
               this.data = true
+
             }
           })
         }else {
           this.pageScroll.refresh()
         }
-      })
-
     },
-    _initScroll1(){
-      this.$nextTick(()=>{
 
-        if(!this.pageScroll1){
-          this.pageScroll1 = new BScroll(this.$refs.appWrap,{
-            click:true,
-            probeType:3
-          })
-          this.pageScroll1.on('scroll',(pos)=>{
-            let scrollY = -Math.round(pos.y)
-            if(scrollY<=68){
-              this.data = false
-            }
-            if(scrollY>68){
-              this.data = true
-            }
-          })
-        }else {
-          this.pageScroll1.refresh()
-        }
-      })
-    }
   }
 }
 </script>
@@ -142,6 +122,7 @@
     transform-origin top
     opacity .9
     height 68px
+    //transition: .8s
     &.app_header-enter-active
       transition: .8s
     &.app_header-leave-active

@@ -17,7 +17,7 @@
   .two_route
     width 100%
     height 2rem
-    background #f3f3f3
+    background #eaeaea
     display flex
     justify-content space-around
     font-size 16px

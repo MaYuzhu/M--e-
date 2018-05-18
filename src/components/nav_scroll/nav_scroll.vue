@@ -57,7 +57,7 @@
       .swiper-slide
         text-align center
         box-sizing border-box
-        font-size 16px
+        font-size 0.7rem
         line-height 40px
         >span
           padding 6px 0

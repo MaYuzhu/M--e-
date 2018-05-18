@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavHeader :data="data"></NavHeader>
+    <NavHeader></NavHeader>
 
     <div class="home_img">
       <img src="./img/bigimg.jpg" alt="">
@@ -25,7 +25,7 @@
       </ul>
       <div class="new_content" v-if="changeIndex==1">
 
-        <a href="javascript:;">+MORE</a>
+        <router-link to="/news">+MORE</router-link>
         <h2>鸿鹤资本成功签约黑龙江省首支现代畜牧产业投资基金</h2>
         <div class="line"></div>
         <div class="right_data_text">
@@ -41,7 +41,7 @@
       </div>
       <div class="new_content" v-if="changeIndex==2">
 
-        <a href="javascript:;">+MORE</a>
+        <router-link to="/news">+MORE</router-link>
         <h2>测试标题二</h2>
         <div class="line"></div>
         <div class="right_data_text">
@@ -57,7 +57,7 @@
       </div>
       <div class="new_content" v-if="changeIndex==3">
 
-        <a href="javascript:;">+MORE</a>
+        <router-link to="/news">+MORE</router-link>
         <h2>标题三</h2>
         <div class="line"></div>
         <div class="right_data_text">
@@ -88,9 +88,9 @@
         changeIndex:1,
       }
     },
-    props:{
+    /*props:{
       data : Boolean
-    },
+    },*/
     components:{
       NavHeader,
       Industry,

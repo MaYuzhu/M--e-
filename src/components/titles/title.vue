@@ -20,14 +20,20 @@
     margin 20px auto
     h2
       width 100%
-      font-size 24px
+      font-size 1rem
       font-weight 500
       margin 6px 0
       text-align center
-      letter-spacing 5px
+      letter-spacing 4px
     div
       width 2rem
       height 1px
       background #333
       margin 0 auto
+    @media screen and (-webkit-min-device-pixel-ratio: 2) {
+      div  { height: 0.5px }
+    }
+    @media screen and (-webkit-min-device-pixel-ratio: 3) {
+      div  { height: 0.33333px }
+    }
 </style>

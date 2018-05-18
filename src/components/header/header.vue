@@ -1,7 +1,7 @@
 <template>
   <div class="header_wrap">
     <div class="logo">
-      <img src="./logo.png" alt="">
+      <img src="./logo.jpg" alt="">
     </div>
     <div class="nav" @touchend.stop="navIs">
         <i class="iconfont icon-gengduo" :class="{on:isShow}"></i>
