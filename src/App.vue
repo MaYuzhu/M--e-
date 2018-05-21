@@ -4,13 +4,12 @@
     <transition name="app_header">
       <Header v-show="data && $route.meta.showHeader"
               class="app_header"
+              v-on:listenH="showC"
               ></Header>
     </transition>
 
     <div class="app_wrap" ref="appWrap">
-
-        <router-view></router-view>
-
+       <router-view :data="data"></router-view>
     </div>
 
   </div>
@@ -64,9 +63,9 @@
     }
   },
   methods:{
-  	/*showC(x){
+  	showC(x){
       this.data = x
-    },*/
+    },
     _initScroll(){
 
        if(!this.pageScroll){
