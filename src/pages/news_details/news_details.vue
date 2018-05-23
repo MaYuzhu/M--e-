@@ -13,7 +13,10 @@
       <div class="news2_line"></div>
       <p v-html="newsA.label_content">{{newsA.label_content}}</p>
     </div>-->
-    <div class="details">
+    <div class="top_back">
+      <span @click=$router.go(-1)>返回</span>
+    </div>
+    <div class="details" ref="newsWrap">
 
       <h1>标题一</h1>
       <p class="little">
@@ -46,12 +49,43 @@
 </template>
 
 <script>
-  export default {
+  import BScroll from 'better-scroll'
 
+  export default {
+    mounted(){
+      this._initScroll()
+    },
+    methods:{
+      _initScroll(){
+
+        if(!this.pageScroll){
+          this.pageScroll = new BScroll(this.$refs.newsWrap,{
+            click:true,
+            probeType:3
+          })
+          this.pageScroll.on('scroll',(pos)=>{
+            let scrollY = -Math.round(pos.y)
+            if(scrollY<=68){
+
+            }
+            if(scrollY>68){
+              alert(200)
+            }
+          })
+        }else {
+          this.pageScroll.refresh()
+        }
+      },
+    },
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  .top_back
+    width 100%
+    height 50px
+    background pink
+
   .details
     padding  1rem 0.7rem 0
     h1

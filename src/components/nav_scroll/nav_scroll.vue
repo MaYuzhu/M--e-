@@ -33,9 +33,14 @@
 
   export default {
   	mounted(){
-        var swiperScroll = new Swiper('.swiper-container',{
-          slidesPerView: 4.5,
-        })
+
+      var swiperScroll = new Swiper('.swiper-container',{
+        slidesPerView: 4.5,
+        paginationClickable: true,
+        //……
+        observer:true,//修改swiper自己或子元素时，自动初始化swiper
+        observeParents:true,//修改swiper的父元素时，自动初始化swiper
+      })
 
     },
     methods:{
@@ -45,6 +50,9 @@
       isCurrent(path){
   			return this.$route.path.indexOf(path) !== -1
       }
+    },
+    watch:{
+
     }
 
   }

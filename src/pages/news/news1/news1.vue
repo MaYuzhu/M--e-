@@ -81,7 +81,7 @@
       align-items center
       position relative
       >:nth-child(1)
-        width 68%
+        width 65%
         position relative
         >.date
           color #f96624
@@ -112,6 +112,7 @@
         width 5rem
         height 5rem
         position absolute
+        top 0.5rem
         right 0
         overflow hidden
         img

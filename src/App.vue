@@ -1,18 +1,15 @@
 <template>
   <div id="app">
-    <!--v-on:listenH="showC" 解决切换路由头部动画显示问题-->
+    <!--v-on:listenH="showC"-->
     <transition name="app_header">
       <Header v-show="data && $route.meta.showHeader"
-              v-on:listenH="showC"
               class="app_header"
-              :data="data"
+              v-on:listenH="showC"
               ></Header>
     </transition>
 
     <div class="app_wrap" ref="appWrap">
-      <keep-alive>
-        <router-view :data="data"></router-view>
-      </keep-alive>
+       <router-view :data="data"></router-view>
     </div>
 
   </div>
@@ -124,7 +121,7 @@
     transform-origin top
     opacity .9
     height 68px
-    transition: .8s
+    //transition: .8s
     &.app_header-enter-active
       transition: .8s
     &.app_header-leave-active

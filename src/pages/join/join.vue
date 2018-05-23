@@ -8,19 +8,28 @@
     <img class="zhao" src="./zhao1.jpg" alt="">
     <ul class="zhaop">
       <li>
-        <img src="./zhaop1.jpg" alt="">
+        <div class="zhaop_img">
+          <img src="./zhaop1.jpg" alt="">
+        </div>
+
         <p>五险一金、双休、带薪年假、健康关怀，薪满益足，胜于你想</p>
       </li>
       <li>
-        <img src="./zhaop2.jpg" alt="">
+        <div class="zhaop_img">
+          <img src="./zhaop2.jpg" alt="">
+        </div>
         <p>绩效奖、长期服务奖、节日礼品、国内外旅游， 众多惊喜，等你嗨不停！</p>
       </li>
       <li>
-        <img src="./zhaop3.jpg" alt="">
+        <div class="zhaop_img">
+          <img src="./zhaop3.jpg" alt="">
+        </div>
         <p>简单、平等互助的工作方式，弱化层级， 创意无限，妙趣挡不住！</p>
       </li>
       <li>
-        <img src="./zhaop4.jpg" alt="">
+        <div class="zhaop_img">
+          <img src="./zhaop4.jpg" alt="">
+        </div>
         <p>舞台够大，让你乐享挑战，文娱活动够多，展示你最美风采， 上班轻松，下班愉快，这，才叫生活！</p>
       </li>
     </ul>
@@ -72,9 +81,11 @@
       //display flex
       align-items center
       margin-top 1.5rem
-      img
-        width 5rem
-        height 5rem
+      .zhaop_img
+        width 30%
+        /*height 5rem*/
+        img
+          width 100%
       p
         width 12rem
         font-size 0.7rem
