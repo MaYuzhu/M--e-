@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavHeader></NavHeader>
+    <NavHeader :data="data"></NavHeader>
 
     <div class="home_img">
       <img src="./img/bigimg.jpg" alt="">
@@ -88,9 +88,9 @@
         changeIndex:1,
       }
     },
-    /*props:{
+    props:{
       data : Boolean
-    },*/
+    },
     components:{
       NavHeader,
       Industry,

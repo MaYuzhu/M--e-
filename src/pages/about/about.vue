@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavHeader ></NavHeader>
+    <NavHeader :data="data"></NavHeader>
     <div class="about_big_img">
       <img src="./about_03.jpg" alt="">
     </div>
@@ -24,6 +24,9 @@
     components:{
       NavHeader,
       TwoRoute,
+    },
+    props:{
+      data : Boolean
     },
     methods:{
       isCurrent1(path){

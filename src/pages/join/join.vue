@@ -69,7 +69,7 @@
     background #fafafa
     padding 20px
     li
-      display flex
+      //display flex
       align-items center
       margin-top 1.5rem
       img
