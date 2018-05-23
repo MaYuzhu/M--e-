@@ -1,6 +1,11 @@
 <template>
   <div>
     <NavHeader></NavHeader>
+
+    <div class="button1" v-if="aShow==true" @click="isShowA">弹出A</div>
+    <div class="button2" v-if="bShow==true" @click="isShowB">弹出B</div>
+    <div class="button3" v-if="cShow==true" @click="isShowC">弹出C</div>
+
     <div class="contact_big_img">
       <img src="./01.jpg" alt="">
     </div>
@@ -28,10 +33,38 @@
   import Title from '../../components/titles/title.vue'
 
   export default {
+  	data(){
+  		return{
+  			aShow:1,
+        bShow:0,
+        cShow:0,
+      }
+    },
     components:{
       NavHeader,
       Title,
-    }
+    },
+    methods:{
+      isShowA(){
+      	alert('A')
+
+        this.bShow = 1
+        this.aShow = 0
+        this.cShow = 0
+      },
+      isShowB(){
+        alert('B')
+        this.bShow = 0
+        this.aShow = 0
+        this.cShow = 1
+      },
+      isShowC(){
+        alert('C')
+        this.bShow = 0
+        this.aShow = 1
+        this.cShow = 0
+      },
+    },
   }
 </script>
 
